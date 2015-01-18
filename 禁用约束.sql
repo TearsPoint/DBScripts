@@ -1,0 +1,4 @@
+
+
+--禁用约束
+ALTER TABLE 表名 NOCHECK CONSTRAINT ALL 
