@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="103b2cd2-30d2-4d70-b2dd-7b5ed6b01b20" name="Default" comment="" />
+    <list default="true" id="103b2cd2-30d2-4d70-b2dd-7b5ed6b01b20" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSQL脚本/事务的应用.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSQL脚本/分组逗号串连.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MSSQL脚本/给一系列数字自动补零组成固定位数.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSSQL脚本/一个班级分有几个小组.sql" afterPath="$PROJECT_DIR$/MSSQL脚本/一个班级分有几个小组.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MSSQL脚本/查询出的数据列以逗号分隔的字符显示.sql" afterPath="$PROJECT_DIR$/MSSQL脚本/查询出的数据列以逗号分隔的字符显示.sql" />
+    </list>
     <ignored path="DBScripts.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,19 +31,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="无标题4.sql" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="无标题4.sql" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Oracle脚本/无标题4.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="546" selection-end="546" vertical-scroll-proportion="0.7058824" vertical-offset="225" max-vertical-offset="8275">
+            <state line="20" column="41" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8275">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="(proc)sp_ExportDataEx导出表中全部数据.sql" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MSSQL脚本/存储过程、函数、触发器/(proc)sp_ExportDataEx导出表中全部数据.sql">
+      <file leaf-file-name="修改表结构模板.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Oracle脚本/修改表结构模板.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="27" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2900">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="一个班级分有几个小组.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSSQL脚本/一个班级分有几个小组.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="110" column="1" selection-start="2564" selection-end="2564" vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="4275">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="建索引.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSSQL脚本/建索引.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="50" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="550">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="查询一个表中的所有列.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSSQL脚本/查询一个表中的所有列.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="触发器.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSSQL脚本/触发器.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="45" selection-start="407" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="查询出的数据列以逗号分隔的字符显示.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSSQL脚本/查询出的数据列以逗号分隔的字符显示.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="5" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="3725">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="给一系列数字自动补零组成固定位数.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSSQL脚本/给一系列数字自动补零组成固定位数.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="事务的应用.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MSSQL脚本/事务的应用.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="0" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1775">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="分组逗号串连.sql" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MSSQL脚本/分组逗号串连.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="0" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.5887191" vertical-offset="749" max-vertical-offset="2200">
               <folding />
             </state>
           </provider>
@@ -63,6 +143,14 @@
         <option value="$PROJECT_DIR$/一个班级分有几个小组.sql" />
         <option value="$PROJECT_DIR$/查询一个表中的所有列.sql" />
         <option value="$PROJECT_DIR$/附加数据库脚本.sql" />
+        <option value="$PROJECT_DIR$/MSSQL脚本/数据库结构脚本/dic.BloodType_血型.sql" />
+        <option value="$PROJECT_DIR$/MSSQL脚本/一个班级分有几个小组.sql" />
+        <option value="$PROJECT_DIR$/MSSQL脚本/修改表字段类型.sql" />
+        <option value="$PROJECT_DIR$/MSSQL脚本/给一系列数字自动补零组成固定位数.sql" />
+        <option value="$PROJECT_DIR$/MSSQL脚本/查询出的数据列以逗号分隔的字符显示.sql" />
+        <option value="$PROJECT_DIR$/MSSQL脚本/事务的应用.sql" />
+        <option value="$PROJECT_DIR$/MSSQL脚本/分组逗号串连" />
+        <option value="$PROJECT_DIR$/MSSQL脚本/分组逗号串连.sql" />
       </list>
     </option>
   </component>
@@ -70,7 +158,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -98,6 +186,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -115,17 +204,48 @@
               <option name="myItemId" value="DBScripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sqlite操作" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBScripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBScripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Oracle脚本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBScripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DBScripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSSQL脚本" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="File.Encoding" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="options.searchVisible" value="true" />
@@ -230,24 +350,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1036" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22738095" sideWeight="0.6701389" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22738095" sideWeight="0.6701389" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -267,86 +387,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/DBCC回收表或索引视图中已删除的可变长度列的空间.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2050" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MSSQL脚本/NHibernateTestDB创建.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102050" />
+        <state line="3" column="0" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0872093" vertical-offset="0" max-vertical-offset="102050">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/PinMei数据库备份_恢复脚本.sql">
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/数据库结构脚本/dic.BloodType_血型.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425" />
+        <state line="5" column="16" selection-start="50" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="71" max-vertical-offset="900">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/存储过程、函数、触发器/(proc)sp_FindDF_Constraints查询一个表中所有列存在的默认约束.sql">
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/数据库结构脚本/role.UserBaseInfo_用户基本信息表.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="925" />
+        <state line="6" column="0" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="800">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/从Excel导出的日期是数值问题.sql">
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/数据库结构脚本/创建CoreDB数据库脚本.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="350" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/修改表字段类型.sql">
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/数据库结构脚本/拼音五笔码脚本.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="325" />
+        <state line="3" column="56" selection-start="143" selection-end="143" vertical-scroll-proportion="0.09293681" vertical-offset="0" max-vertical-offset="340750">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/创建Proc或Function模板.sql">
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/DBCC回收表或索引视图中已删除的可变长度列的空间.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1350" />
+        <state line="20" column="23" selection-start="506" selection-end="506" vertical-scroll-proportion="0.5727377" vertical-offset="0" max-vertical-offset="2050">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/已存在的表新增字段脚本.sql">
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/给一系列数字自动补零组成固定位数.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/建索引.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="550" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/查询一个表中的所有列.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/查询出的数据列以逗号分隔的字符显示.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3600" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/触发器.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/SQLSERVER高级注入技巧 .sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1725" />
+        <state line="10" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MSSQL脚本/一个班级分有几个小组.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="235" selection-end="235" vertical-scroll-proportion="0.23894863" vertical-offset="0" max-vertical-offset="3050" />
+        <state line="110" column="1" selection-start="2564" selection-end="2564" vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="4275">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MSSQL脚本/存储过程、函数、触发器/(proc)sp_ExportDataEx导出表中全部数据.sql">
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/建索引.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="27" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2900">
+        <state line="16" column="50" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="550">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/查询一个表中的所有列.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/触发器.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="45" selection-start="407" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Oracle脚本/无标题4.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="546" selection-end="546" vertical-scroll-proportion="0.7058824" vertical-offset="225" max-vertical-offset="8275">
+        <state line="20" column="41" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oracle脚本/修改表结构模板.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/查询出的数据列以逗号分隔的字符显示.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="5" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="3725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/事务的应用.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0" vertical-offset="325" max-vertical-offset="1775">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MSSQL脚本/分组逗号串连.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.5887191" vertical-offset="749" max-vertical-offset="2200">
           <folding />
         </state>
       </provider>

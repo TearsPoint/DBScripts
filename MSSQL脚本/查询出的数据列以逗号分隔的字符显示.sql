@@ -1,36 +1,38 @@
 
+DROP TABLE dbo.student
+CREATE TABLE student
+( 
+   id NVARCHAR(30) NOT NULL,
+   NAME NVARCHAR(30) NOT NULL
+)
 
-USE ReportServer
+INSERT INTO student
+SELECT '001','张三' UNION ALL
+SELECT '002','李四' UNION ALL
+SELECT '003','王五' UNION ALL
+SELECT '004','朱六'
 
-SELECT * FROM dbo.Users
+SELECT * FROM student
 
-
-
+--方法一
 declare @a varchar(100)
 set @a=''
-SELECT @a =@a + u.UserName + ',' FROM dbo.Users u 
+SELECT @a =@a + u.Name + ',' FROM dbo.student u 
+PRINT @a
 PRINT SUBSTRING(@a,0,LEN(@a))  
 
 
-
+--方法二
 declare @output varchar(8000)
-select @output = coalesce(@output + ',' , '') + u.UserName from Users u 
+select @output = coalesce(@output + ',' , '') + u.Name from dbo.student u 
 print @output
 
 
-CREATE SCHEMA [test] AUTHORIZATION [dbo]
- 
-SELECT AuthType,aaa=(SELECT 1)FROM dbo.Users u GROUP BY u.AuthType 
 
-SELECT * FROM sys.schemas
+ 
 
 --
-
-
-
-
-
-
+ 
 IF OBJECT_ID('dbo.wages') IS NOT NULL
     DROP TABLE wages;
 GO
@@ -71,11 +73,6 @@ ORDER BY 'Total Salary';
 GO
 
 
-
-
-
-USE PinMeiCoreDB
-
 IF OBJECT_ID('[tb]') IS NOT NULL DROP TABLE [tb]
 GO
 create table tb(姓名 nvarchar(10) , 课程 nvarchar(10) , 分数 int)
@@ -90,7 +87,9 @@ go
 SELECT * FROM dbo.tb
 
   
-
+  
+  
+------------------------------------------------------
 
 SELECT * FROM sys.sql_modules
 SELECT * FROM sys.objects WHERE object_id IN (SELECT object_id FROM sys.sql_modules)
@@ -103,8 +102,7 @@ as
 begin
 declare @objectiveCode int, @SQL NVARCHAR(200)
 set @SQL='select top 1 @objectiveCode=objectiveCode from (select top '+@index+' objectiveCode from sco_e_objectives where ResourceID='+@RsourceID +')a';
-EXEC SP_EXECUTESQL @SQL,N'@objectiveCode int', 
-        @objectiveCode OUT;
+EXEC SP_EXECUTESQL @SQL,N'@objectiveCode int', @objectiveCode OUT;
 return @objectiveCode
 end
 GO
@@ -118,21 +116,28 @@ create table test
  insert test (userID,userName)values(1,'ccc')  
  insert test (userID,userName)values(1,'ddd')    
  --建函数  
- CREATE function f_test  
+ ALTER function f_test  
  (@userID int,@index int)  
  returns int  
  as 
-  begin    
- declare @ids int, @sql NVARCHAR(200),@ind nvarchar(10)  set @ind=cast(@index as nvarchar)    
- set @sql='select top 1 @ids=ids from (select top '+@ind+'   ids from test where userID='+cast(@userID as nvarchar)+')a order by ids desc'  
- exec sp_executesql @sql,N'@ids int',@ids out;  
- return @ids  end 
+ begin    
+	 declare @ids int, @sql NVARCHAR(200),@ind nvarchar(10)  set @ind=cast(@index as nvarchar)    
+	 set @sql='select top 1 @ids=ids from (select top '+@ind+'   ids from test where userID='+cast(@userID as nvarchar)+')a order by ids desc'  
+	 exec sp_executesql @sql,N'@ids int out',@ids out;    --会报错：只有函数和某些扩展存储过程才能从函数内部执行
+	 return @ids  
+end 
  
   go    
  
  --调用  
- select dbo.f_test(1,1)    
+ SELECT  dbo.f_test(1,1)    
+ 
+ 
  --封装到存储过程调用  
- create proc sp_test  @userID int,  @index int  as  
- select dbo.f_test(@userID,@index)    
+ alter proc sp_test  @userID int,  @index int  as  
+ declare @ids int, @sql NVARCHAR(200),@ind nvarchar(10)  set @ind=cast(@index as nvarchar)    
+	 set @sql='select top 1 @ids=ids from (select top '+@ind+'   ids from test where userID='+cast(@userID as nvarchar)+')a order by ids desc'  
+	 exec sp_executesql @sql,N'@ids int out',@ids out;  
+	 SELECT @ids      
+ 
  exec sp_test 1,1  

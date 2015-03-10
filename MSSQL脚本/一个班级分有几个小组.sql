@@ -1,24 +1,24 @@
---ä¸€ä¸ªç­çº§åˆ†æœ‰å‡ ä¸ªå°ç»„ï¼Œè€ƒè¯•æˆç»©è®°å½•åœ¨æ•°æ®åº“ä¸­çš„æŸä¸ªè¡¨tScoresä¸­ï¼Œ
---è¡¨ä¸­å­—æ®µæœ‰å­¦ç”Ÿ[StudentName],å°ç»„å[GroupName],æˆç»©[Score],
---çŽ°è¦ç»Ÿè®¡æ¯ä¸ªå°ç»„ä¸­åˆ†æ•°æœ€é«˜ï¼ˆå¦‚æžœæœ‰å¤šä¸ªå°±éƒ½æ˜¾ç¤ºï¼‰çš„å­¦ç”Ÿã€æ‰€åœ¨å°ç»„ã€æ‰€å¾—æˆç»©ï¼Œè¯·å†™å‡ºä½ è®¤ä¸ºæœ€ç®€å•sqlè¯­å¥ã€‚
---æ–¹æ³•å¤šå¤šï¼Œè°çš„æ•ˆçŽ‡æœ€å¿«
-
+--Ò»¸ö°à¼¶·ÖÓÐ¼¸¸öÐ¡×é£¬¿¼ÊÔ³É¼¨¼ÇÂ¼ÔÚÊý¾Ý¿âÖÐµÄÄ³¸ö±ítScoresÖÐ£¬
+--±íÖÐ×Ö¶ÎÓÐÑ§Éú[StudentName],Ð¡×éÃû[GroupName],³É¼¨[Score],
+--ÏÖÒªÍ³¼ÆÃ¿¸öÐ¡×éÖÐ·ÖÊý×î¸ß£¨Èç¹ûÓÐ¶à¸ö¾Í¶¼ÏÔÊ¾£©µÄÑ§Éú¡¢ËùÔÚÐ¡×é¡¢ËùµÃ³É¼¨£¬ÇëÐ´³öÄãÈÏÎª×î¼òµ¥sqlÓï¾ä¡£
+--·½·¨¶à¶à£¬Ë­µÄÐ§ÂÊ×î¿ì
+ 
 create table cte(
 StudentName varchar(10),GroupName varchar(10),Score int
 )
  
 insert into cte
-select 'å¼ ä¸€','ä¸€ç»„','90' union all
-select 'å¼ äºŒ','ä¸€ç»„','58' union all
-select 'å¼ ä¸‰','ä¸€ç»„','90' union all
-select 'æŽä¸€','äºŒç»„','78' union all
-select 'æŽäºŒ','äºŒç»„','97' union all
-select 'æŽä¸‰','äºŒç»„','45' union all
-select 'çŽ‹ä¸€','ä¸‰ç»„','78' union all
-select 'çŽ‹äºŒ','ä¸‰ç»„','98' union all
-select 'çŽ‹ä¸‰','ä¸‰ç»„','33' 
+select 'ÕÅÒ»','Ò»×é','90' union all
+select 'ÕÅ¶þ','Ò»×é','58' union all
+select 'ÕÅÈý','Ò»×é','90' union all
+select 'ÀîÒ»','¶þ×é','78' union all
+select 'Àî¶þ','¶þ×é','97' union all
+select 'ÀîÈý','¶þ×é','45' union all
+select 'ÍõÒ»','Èý×é','78' union all
+select 'Íõ¶þ','Èý×é','98' union all
+select 'ÍõÈý','Èý×é','33' 
  
- 
+--·½·¨Ò»
 select c1.*
 from cte c1
 inner join
@@ -30,34 +30,82 @@ inner join
     )c2
     on c2.GroupName = c1.GroupName
        and c2.score = c1.Score
-       
-
- DROP TABLE cte
-       
----------------------------
-       ;with cte(StudentName,GroupName,Score) as
+        
+--·½·¨¶þ
+;with cte(StudentName,GroupName,Score) as
 (
-    select 'å¼ ä¸€','ä¸€ç»„','90' union all
-    select 'å¼ äºŒ','ä¸€ç»„','58' union all
-    select 'å¼ ä¸‰','ä¸€ç»„','90' union all
-    select 'æŽä¸€','äºŒç»„','78' union all
-    select 'æŽäºŒ','äºŒç»„','97' union all
-    select 'æŽä¸‰','äºŒç»„','45' union all
-    select 'çŽ‹ä¸€','ä¸‰ç»„','78' union all
-    select 'çŽ‹äºŒ','ä¸‰ç»„','98' union all
-    select 'çŽ‹ä¸‰','ä¸‰ç»„','33' 
+    select 'ÕÅÒ»','Ò»×é','90' union all
+    select 'ÕÅ¶þ','Ò»×é','58' union all
+    select 'ÕÅÈý','Ò»×é','90' union all
+    select 'ÀîÒ»','¶þ×é','78' union all
+    select 'Àî¶þ','¶þ×é','97' union all
+    select 'ÀîÈý','¶þ×é','45' union all
+    select 'ÍõÒ»','Èý×é','78' union all
+    select 'Íõ¶þ','Èý×é','98' union all
+    select 'ÍõÈý','Èý×é','33' 
 )
 select StudentName,GroupName,Score from (
 select DENSE_RANK() over(partition by GroupName order by Score desc) id,* from cte
 )a where id=1 
 order by GroupName DESC
+ 
 
 
+--Ã¿Ò»×é °´·ÖÊýÅÅÃû
 SELECT DENSE_RANK() OVER( partition by GroupName order by Score DESC ) id,* from cte 
 
-
-USE PinMeiCoreDB
  
+ 
+ 
+----------------
+DROP TABLE dbo.course
+DROP TABLE dbo.student
+CREATE TABLE student
+( 
+   id NVARCHAR(30) NOT NULL,
+   NAME NVARCHAR(30) NOT NULL
+)
+
+INSERT INTO student
+SELECT '001','ÕÅÈý' UNION ALL
+SELECT '002','ÀîËÄ' UNION ALL
+SELECT '003','ÍõÎå' UNION ALL
+SELECT '004','ÖìÁù'
+
+SELECT * FROM student
+
+CREATE TABLE course
+(student_id NVARCHAR(30) NOT NULL,
+course NVARCHAR(30) NOT NULL,
+score DECIMAL NOT NULL)
+go
+
+INSERT INTO course 
+SELECT '001','ÓïÎÄ',52 UNION ALL
+SELECT '001','ÊýÑ§',66 UNION ALL
+SELECT '002','ÓïÎÄ',59 UNION ALL
+SELECT '002','Ó¢Óï',80 UNION ALL
+SELECT '002','ÕþÖÎ',60 UNION ALL
+SELECT '003','ÊýÑ§',88 
+
+SELECT * FROM course
+
+--11  Ã¿ÃÅ¿Î³Ì¶¼ÔÚ60·ÖÒÔÉÏ
+SELECT s.NAME FROM
+(SELECT student_id, MIN(score) min_score FROM course GROUP BY student_id ) AS t1,student s
+WHERE min_score>=60 AND s.id = t1.student_id
+
+--12 Ò»°ëµÄ¿Î³Ì¶¼ÔÚ60·ÖÒÔÉÏ
+select s.name,¿Î³ÌÊý = count(c.score),³¬¹ý60·ÖµÄ¿Î³ÌÊý = sum(case when c.score>=60 then 1 else 0 end)
+ from student s join course c
+  on s.id=c.student_id
+  group by s.name
+  having sum(case when c.score>=60 then 1 else 0 end)/cast(count(c.score)as numeric)>=0.5
+
+  
+  
+  
+--
 create table tbccc(
  tid varchar(10),pn varchar(10),no NVARCHAR(10)
 )
@@ -83,10 +131,11 @@ SELECT * FROM dbo.tbccc WHERE no NOT IN ( pn )
 
 go
 
+
 CREATE TABLE #result(col1 nvarchar(10) NULL, col2 NVARCHAR(10))
 SELECT tid INTO #temp FROM dbo.tbccc GROUP BY tid
 DECLARE @Id NVARCHAR(10) 
---å£°æ˜Žæ¸¸æ ‡  
+--ÉùÃ÷ÓÎ±ê  
 DECLARE tempCursor CURSOR
 FOR SELECT DISTINCT tid FROM #temp 
  
@@ -100,8 +149,8 @@ BEGIN
 	SELECT @Id col1, no col2 FROM dbo.tbccc WHERE tid = @Id AND no NOT IN (SELECT pn FROM dbo.tbccc WHERE tid=@Id)
 END 
 
-CLOSE tempCursor   --å…³é—­æ¸¸æ ‡
-DEALLOCATE tempCursor --å›žæ”¶æ¸¸æ ‡
+CLOSE tempCursor   --¹Ø±ÕÓÎ±ê
+DEALLOCATE tempCursor --»ØÊÕÓÎ±ê
 
 SELECT * FROM #result
 DROP TABLE #result
