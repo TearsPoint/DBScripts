@@ -1,23 +1,19 @@
 
 
---游标应用
-
 DECLARE @Id INT 
---声明游标  
 DECLARE tempCursor CURSOR
-FOR SELECT DISTINCT [游标列] FROM [表] WHERE [条件]
+FOR SELECT DISTINCT [] FROM [] WHERE []
  
-OPEN tempCursor  --打开游标
+OPEN tempCursor  
 WHILE(1=1)
 BEGIN 
-	FETCH NEXT FROM tempCursor INTO @Id  --往下游
-	IF(@@FETCH_STATUS!=0)  --游标状态不等于0时退出
+	FETCH NEXT FROM tempCursor INTO @Id  
+	IF(@@FETCH_STATUS!=0)  
 		BREAK 
 	PRINT @Id  
-	[相关处理]
 END 
 
-CLOSE tempCursor   --关闭游标
-DEALLOCATE tempCursor --回收游标
+CLOSE tempCursor 
+DEALLOCATE tempCursor 
 
  
