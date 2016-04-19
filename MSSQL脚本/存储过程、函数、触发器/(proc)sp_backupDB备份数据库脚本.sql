@@ -1,6 +1,7 @@
 
 go
 use master
+
 go
   
 if object_id('sp_backupDB') is not null

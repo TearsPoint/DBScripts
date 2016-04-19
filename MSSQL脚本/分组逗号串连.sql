@@ -1,3 +1,5 @@
+USE CoreDB
+
 create table t1
 (mid int,
 uid varchar(1))
