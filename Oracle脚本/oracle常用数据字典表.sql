@@ -37,108 +37,108 @@ select   *   from   all_triggers ;
 select username,default_tablespace from dba_users;
 select * from dba_users;
 
---²é¿´µ±Ç°ÓÃ»§µÄÈ±Ê¡±í¿Õ¼ä
+--æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„ç¼ºçœè¡¨ç©ºé—´
 select username,default_tablespace from user_users;
---²é¿´µ±Ç°ÓÃ»§µÄ½ÇÉ«
+--æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„è§’è‰²
 select * from user_role_privs;
 
---²é¿´µ±Ç°ÓÃ»§µÄÏµÍ³È¨ÏŞºÍ±í¼¶È¨ÏŞ
+--æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„ç³»ç»Ÿæƒé™å’Œè¡¨çº§æƒé™
 select * from user_sys_privs;
 select * from user_tab_privs;
 
---²é¿´ÓÃ»§ÏÂËùÓĞµÄ±í
+--æŸ¥çœ‹ç”¨æˆ·ä¸‹æ‰€æœ‰çš„è¡¨
 select * from user_tables;
 
- --²é¿´ÓÃ»§ÏÂËùÓĞµÄ±íµÄÁĞÊôĞÔ
+ --æŸ¥çœ‹ç”¨æˆ·ä¸‹æ‰€æœ‰çš„è¡¨çš„åˆ—å±æ€§
     select * from USER_TAB_COLUMNS where table_name=:table_Name;
 
---ÏÔÊ¾ÓÃ»§ĞÅÏ¢(ËùÊô±í¿Õ¼ä)
+--æ˜¾ç¤ºç”¨æˆ·ä¿¡æ¯(æ‰€å±è¡¨ç©ºé—´)
 select default_tablespace,temporary_tablespace 
 from dba_users where username='GAME';
 
---1¡¢ÓÃ»§
+--1ã€ç”¨æˆ·
 
---²é¿´µ±Ç°ÓÃ»§µÄÈ±Ê¡±í¿Õ¼ä
+--æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„ç¼ºçœè¡¨ç©ºé—´
 select username,default_tablespace from user_users;
 
---²é¿´µ±Ç°ÓÃ»§µÄ½ÇÉ«
+--æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„è§’è‰²
 select * from user_role_privs;
 
---²é¿´µ±Ç°ÓÃ»§µÄÏµÍ³È¨ÏŞºÍ±í¼¶È¨ÏŞ
+--æŸ¥çœ‹å½“å‰ç”¨æˆ·çš„ç³»ç»Ÿæƒé™å’Œè¡¨çº§æƒé™
 select * from user_sys_privs;
 select * from user_tab_privs;
 
---ÏÔÊ¾µ±Ç°»á»°Ëù¾ßÓĞµÄÈ¨ÏŞ
+--æ˜¾ç¤ºå½“å‰ä¼šè¯æ‰€å…·æœ‰çš„æƒé™
 select * from session_privs;
 
---ÏÔÊ¾Ö¸¶¨ÓÃ»§Ëù¾ßÓĞµÄÏµÍ³È¨ÏŞ
+--æ˜¾ç¤ºæŒ‡å®šç”¨æˆ·æ‰€å…·æœ‰çš„ç³»ç»Ÿæƒé™
 select * from dba_sys_privs where grantee='GAME';
 
---ÏÔÊ¾ÌØÈ¨ÓÃ»§
+--æ˜¾ç¤ºç‰¹æƒç”¨æˆ·
 select * from v$pwfile_users;
 
---ÏÔÊ¾ÓÃ»§ĞÅÏ¢(ËùÊô±í¿Õ¼ä)
+--æ˜¾ç¤ºç”¨æˆ·ä¿¡æ¯(æ‰€å±è¡¨ç©ºé—´)
 select default_tablespace,temporary_tablespace 
 from dba_users where username='GAME';
 
---ÏÔÊ¾ÓÃ»§µÄPROFILE
+--æ˜¾ç¤ºç”¨æˆ·çš„PROFILE
 select profile from dba_users where username='GAME';
 
 
---2¡¢±í
+--2ã€è¡¨
 
---²é¿´ÓÃ»§ÏÂËùÓĞµÄ±í
+--æŸ¥çœ‹ç”¨æˆ·ä¸‹æ‰€æœ‰çš„è¡¨
 select * from user_tables;
 
---²é¿´Ãû³Æ°üº¬log×Ö·ûµÄ±í
+--æŸ¥çœ‹åç§°åŒ…å«logå­—ç¬¦çš„è¡¨
 select object_name,object_id from user_objects
 where instr(object_name,'LOG')>0;
 
---²é¿´Ä³±íµÄ´´½¨Ê±¼ä
+--æŸ¥çœ‹æŸè¡¨çš„åˆ›å»ºæ—¶é—´
 select object_name,created from user_objects where object_name=upper('&table_name');
 
---²é¿´Ä³±íµÄ´óĞ¡
+--æŸ¥çœ‹æŸè¡¨çš„å¤§å°
 select sum(bytes)/(1024*1024) as "size(M)" from user_segments
 where segment_name=upper('&table_name');
 
---²é¿´·ÅÔÚOracleµÄÄÚ´æÇøÀïµÄ±í
+--æŸ¥çœ‹æ”¾åœ¨Oracleçš„å†…å­˜åŒºé‡Œçš„è¡¨
 select table_name,cache from user_tables where instr(cache,'Y')>0;
 
---3¡¢Ë÷Òı
+--3ã€ç´¢å¼•
 
---²é¿´Ë÷Òı¸öÊıºÍÀà±ğ
+--æŸ¥çœ‹ç´¢å¼•ä¸ªæ•°å’Œç±»åˆ«
 select index_name,index_type,table_name from user_indexes order by table_name;
 
---²é¿´Ë÷Òı±»Ë÷ÒıµÄ×Ö¶Î
+--æŸ¥çœ‹ç´¢å¼•è¢«ç´¢å¼•çš„å­—æ®µ
 select * from user_ind_columns where index_name=upper('&index_name');
 
---²é¿´Ë÷ÒıµÄ´óĞ¡
+--æŸ¥çœ‹ç´¢å¼•çš„å¤§å°
 select sum(bytes)/(1024*1024) as "size(M)" from user_segments
 where segment_name=upper('&index_name');
 
---4¡¢ĞòÁĞºÅ
+--4ã€åºåˆ—å·
 
---²é¿´ĞòÁĞºÅ£¬last_numberÊÇµ±Ç°Öµ
+--æŸ¥çœ‹åºåˆ—å·ï¼Œlast_numberæ˜¯å½“å‰å€¼
 select * from user_sequences;
 
---5¡¢ÊÓÍ¼
+--5ã€è§†å›¾
 
---²é¿´ÊÓÍ¼µÄÃû³Æ
+--æŸ¥çœ‹è§†å›¾çš„åç§°
 select view_name from user_views;
 
---²é¿´´´½¨ÊÓÍ¼µÄselectÓï¾ä
+--æŸ¥çœ‹åˆ›å»ºè§†å›¾çš„selectè¯­å¥
 set view_name,text_length from user_views;
-set long 2000; ËµÃ÷£º¿ÉÒÔ¸ù¾İÊÓÍ¼µÄtext_lengthÖµÉè¶¨set long µÄ´óĞ¡
+set long 2000; è¯´æ˜ï¼šå¯ä»¥æ ¹æ®è§†å›¾çš„text_lengthå€¼è®¾å®šset long çš„å¤§å°
 select text from user_views where view_name=upper('&view_name');
 
---6¡¢Í¬Òå´Ê
+--6ã€åŒä¹‰è¯
 
---²é¿´Í¬Òå´ÊµÄÃû³Æ
+--æŸ¥çœ‹åŒä¹‰è¯çš„åç§°
 select * from user_synonyms;
 
---7¡¢Ô¼ÊøÌõ¼ş
+--7ã€çº¦æŸæ¡ä»¶
 
---²é¿´Ä³±íµÄÔ¼ÊøÌõ¼ş
+--æŸ¥çœ‹æŸè¡¨çš„çº¦æŸæ¡ä»¶
 select constraint_name, constraint_type,search_condition, r_constraint_name
 from user_constraints where table_name = upper('&table_name');
 
@@ -148,11 +148,11 @@ where c.owner = upper('&table_owner') and c.table_name = upper('&table_name')
 and c.owner = cc.owner and c.constraint_name = cc.constraint_name
 order by cc.position;
 
---8¡¢´æ´¢º¯ÊıºÍ¹ı³Ì
+--8ã€å­˜å‚¨å‡½æ•°å’Œè¿‡ç¨‹
 
---²é¿´º¯ÊıºÍ¹ı³ÌµÄ×´Ì¬
+--æŸ¥çœ‹å‡½æ•°å’Œè¿‡ç¨‹çš„çŠ¶æ€
 select object_name,status from user_objects where object_type='FUNCTION';
 select object_name,status from user_objects where object_type='PROCEDURE';
 
---²é¿´º¯ÊıºÍ¹ı³ÌµÄÔ´´úÂë
+--æŸ¥çœ‹å‡½æ•°å’Œè¿‡ç¨‹çš„æºä»£ç 
 select text from all_source where owner=user and name=upper('&plsql_name');

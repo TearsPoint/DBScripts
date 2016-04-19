@@ -4,20 +4,20 @@ StudentName varchar(10),GroupName varchar(10),Score int
 )
 
 insert into cte
-select 'ÕÅÒ»','Ò»×é','90' union all
-select 'ÕÅ¶ş','Ò»×é','58' union all
-select 'ÕÅÈı','Ò»×é','90' union all
-select 'ÀîÒ»','¶ş×é','78' union all
-select 'Àî¶ş','¶ş×é','97' union all
-select 'ÀîÈı','¶ş×é','45' union all
-select 'ÍõÒ»','Èı×é','78' union all
-select 'Íõ¶ş','Èı×é','98' union all
-select 'ÍõÈı','Èı×é','33'
+select 'å¼ ä¸€','ä¸€ç»„','90' union all
+select 'å¼ äºŒ','ä¸€ç»„','58' union all
+select 'å¼ ä¸‰','ä¸€ç»„','90' union all
+select 'æä¸€','äºŒç»„','78' union all
+select 'æäºŒ','äºŒç»„','97' union all
+select 'æä¸‰','äºŒç»„','45' union all
+select 'ç‹ä¸€','ä¸‰ç»„','78' union all
+select 'ç‹äºŒ','ä¸‰ç»„','98' union all
+select 'ç‹ä¸‰','ä¸‰ç»„','33'
 
 SELECT * FROM cte
---ÊÂÎñµÄÓ¦ÓÃ
+--äº‹åŠ¡çš„åº”ç”¨
 BEGIN TRAN
-DELETE cte WHERE groupname = 'Ò»×é';
+DELETE cte WHERE groupname = 'ä¸€ç»„';
 RAISERROR ('aaa',16, 1)
 IF @@ERROR <> 0
 	ROLLBACK TRAN

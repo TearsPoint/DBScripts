@@ -9,7 +9,7 @@ if object_id('tool.sp_FindColumnInViews') is not null
 go
 /*   ------------------------------
 Name:		 tool.sp_FindColumnInViews
-Function:	 ÔÚÊÓÍ¼ÖĞ²éÑ¯ÁĞ
+Function:	 åœ¨è§†å›¾ä¸­æŸ¥è¯¢åˆ—
 Parameters:	 
 			 
 Creator:	 wh      2013-09-12
@@ -17,8 +17,8 @@ Creator:	 wh      2013-09-12
 AlterList
 -----------------------------------*/
 CREATE PROC tool.sp_FindColumnInViews
-@viewName VARCHAR(30),		--±íÃû  Îª''Ê±£¬ÒÔÈ«²¿±í
-@columnName NVARCHAR(30)	--ÁĞÃû  Îª''Ê±£¬ÒÔÈ«²¿ÁĞ
+@viewName VARCHAR(30),		--è¡¨å  ä¸º''æ—¶ï¼Œä»¥å…¨éƒ¨è¡¨
+@columnName NVARCHAR(30)	--åˆ—å  ä¸º''æ—¶ï¼Œä»¥å…¨éƒ¨åˆ—
 AS
 BEGIN
 	SELECT s.name [SCHEMA], t.name [View],c.name [Column],ty.name+'('+ CONVERT(NVARCHAR, ty.max_length) +')' [Type] FROM syscolumns AS c

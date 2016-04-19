@@ -7,7 +7,7 @@ if object_id('tool.sp_FindColumn') is not null
 GO
 /*   ------------------------------
 Name:		 tool.sp_FindColumn
-Function:	 ²éÑ¯ÁĞ
+Function:	 æŸ¥è¯¢åˆ—
 Parameters:	 
 			 
 Creator:	 wh      2012-08-22
@@ -15,8 +15,8 @@ Creator:	 wh      2012-08-22
 AlterList
 -----------------------------------*/
 CREATE PROC tool.sp_FindColumn
-@tableName VARCHAR(30),		--±íÃû  Îª''Ê±£¬ÒÔÈ«²¿±í
-@columnName NVARCHAR(30)	--ÁĞÃû  Îª''Ê±£¬ÒÔÈ«²¿ÁĞ
+@tableName VARCHAR(30),		--è¡¨å  ä¸º''æ—¶ï¼Œä»¥å…¨éƒ¨è¡¨
+@columnName NVARCHAR(30)	--åˆ—å  ä¸º''æ—¶ï¼Œä»¥å…¨éƒ¨åˆ—
 AS
 BEGIN
 	SELECT s.name+'.' [SCHEMA], t.NAME [Table],c.name [Column],ty.name+'('+ CONVERT(NVARCHAR, ty.max_length) +')' [Type] FROM syscolumns AS c

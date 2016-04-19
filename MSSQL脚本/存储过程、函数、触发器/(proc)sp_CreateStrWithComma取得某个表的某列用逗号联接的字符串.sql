@@ -8,18 +8,18 @@ DROP PROC [tool].[sp_CreateStrWithComma]
 GO
 /*============================================================
 spName:		[tool].[spCreateStrWithComma]
-Function:	È¡µÃÄ³¸ö±íµÄÄ³ÁĞÓÃ¶ººÅÁª½ÓµÄ×Ö·û´®
-Input:		@tableName nvarchar(100),	±íÃû
-			@colName nvarchar(100) ,	ÁĞÃû
-			@filter nvarchar(4000)		Ìõ¼ş
+Function:	å–å¾—æŸä¸ªè¡¨çš„æŸåˆ—ç”¨é€—å·è”æ¥çš„å­—ç¬¦ä¸²
+Input:		@tableName nvarchar(100),	è¡¨å
+			@colName nvarchar(100) ,	åˆ—å
+			@filter nvarchar(4000)		æ¡ä»¶
 OutPut:		
 Author:		wh	2012-11-30  
-ÈÕÆÚ        ĞŞ¸ÄÈË                 ĞŞ¸ÄËµÃ÷ 
+æ—¥æœŸ        ä¿®æ”¹äºº                 ä¿®æ”¹è¯´æ˜ 
 =================================================================
 
-²âÊÔ
+æµ‹è¯•
 	DECLARE @t NVARCHAR(4000) 
-	EXEC test.sp_CreateStrWithComma 'tb','ĞÕÃû','',@t OUTput
+	EXEC test.sp_CreateStrWithComma 'tb','å§“å','',@t OUTput
 	PRINT @t
 */
 CREATE PROC [tool].[sp_CreateStrWithComma] (

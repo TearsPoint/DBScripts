@@ -1,17 +1,17 @@
 
 
---ÎªÄ³ÁÐ´´½¨Ë÷Òý
-IF EXISTS (SELECT * FROM dbo.sysindexes WHERE NAME = N'idx_ÁÐÃû' AND ID = object_id(N'±íÃû')) 
-	DROP INDEX ±íÃû.[idx_ÁÐÃû]
+--ä¸ºæŸåˆ—åˆ›å»ºç´¢å¼•
+IF EXISTS (SELECT * FROM dbo.sysindexes WHERE NAME = N'idx_åˆ—å' AND ID = object_id(N'è¡¨å')) 
+	DROP INDEX è¡¨å.[idx_åˆ—å]
 GO
-	CREATE INDEX [idx_ÁÐÃû] ON ±íÃû([ÁÐÃû]) ON [PRIMARY]
+	CREATE INDEX [idx_åˆ—å] ON è¡¨å([åˆ—å]) ON [PRIMARY]
 GO
 
---ÎªÄ³ÁÐ´´½¨¾Û¼¯Ë÷Òý
-IF EXISTS (SELECT * FROM dbo.sysindexes WHERE NAME = N'cidx_ÁÐÃû' AND ID = object_id(N'±íÃû'))
-	DROP INDEX ±íÃû.[cidx_ÁÐÃû]
+--ä¸ºæŸåˆ—åˆ›å»ºèšé›†ç´¢å¼•
+IF EXISTS (SELECT * FROM dbo.sysindexes WHERE NAME = N'cidx_åˆ—å' AND ID = object_id(N'è¡¨å'))
+	DROP INDEX è¡¨å.[cidx_åˆ—å]
 GO
-	CREATE  CLUSTERED INDEX [cidx_ÁÐÃû] ON ±íÃû([ÁÐÃû]) ON [PRIMARY]
+	CREATE  CLUSTERED INDEX [cidx_åˆ—å] ON è¡¨å([åˆ—å]) ON [PRIMARY]
 GO
 
 --SELECT object_id(N'config.ChineseCharacterCode')

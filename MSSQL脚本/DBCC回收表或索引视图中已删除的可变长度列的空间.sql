@@ -16,7 +16,7 @@ CREATE TABLE dbo.CleanTableTest
     );
 GO 
 
---创建后的可变长度列的空间
+--鍒涘缓鍚庣殑鍙彉闀垮害鍒楃殑绌洪棿
 DECLARE @db_id SMALLINT;
 DECLARE @object_id INT;
 SET @db_id = DB_ID(N'PinMeiCoreDB');
@@ -32,7 +32,7 @@ GO
 INSERT INTO dbo.CleanTableTest ( Character ,  WBCode , SpellCode ,WBCode1 ,SpellCode1 , RowVersion ) 
 SELECT Character ,  WBCode , SpellCode ,WBCode1 ,SpellCode1 , RowVersion FROM config.ChineseCharacterCode
         
-----插入数据后的可变长度列的空间
+----鎻掑叆鏁版嵁鍚庣殑鍙彉闀垮害鍒楃殑绌洪棿
 DECLARE @db_id SMALLINT;
 DECLARE @object_id INT;
 SET @db_id = DB_ID(N'PinMeiCoreDB');
@@ -46,10 +46,10 @@ GO
 
 ALTER TABLE dbo.CleanTableTest
 DROP COLUMN SpellCode
--- 运行回收
+-- 杩愯鍥炴敹
 DBCC CLEANTABLE (PinMeiCoreDB,"dbo.CleanTableTest"); 
 
---运行回收后的可变长度列的空间
+--杩愯鍥炴敹鍚庣殑鍙彉闀垮害鍒楃殑绌洪棿
 DECLARE @db_id SMALLINT;
 DECLARE @object_id INT;
 SET @db_id = DB_ID(N'PinMeiCoreDB');

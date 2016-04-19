@@ -9,10 +9,10 @@ if object_id('sp_backupDB') is not null
 go
 /*   ------------------------------
 Name:		 dbo.sp_backupDB
-Function:	 ±¸·İÊı¾İ¿â
+Function:	 å¤‡ä»½æ•°æ®åº“
 Parameters:	 
-			 @DBName sysname,--Êı¾İ¿âÃû
-			 @RestoreFiles nvarchar(1000)--Â·¾¶Èç£ºc:\
+			 @DBName sysname,--æ•°æ®åº“å
+			 @RestoreFiles nvarchar(1000)--è·¯å¾„å¦‚ï¼šc:\
 Creator:	 wh      2012-08-05
 
 AlterList
@@ -20,8 +20,8 @@ AlterList
 
 */
 create proc sp_backupDB(
- @DBName sysname,--Êı¾İ¿âÃû
- @RestoreFiles nvarchar(1000)--Â·¾¶Èç£ºc:\
+ @DBName sysname,--æ•°æ®åº“å
+ @RestoreFiles nvarchar(1000)--è·¯å¾„å¦‚ï¼šc:\
 )
 as
 declare @S nvarchar(4000),@BackName nvarchar(200)

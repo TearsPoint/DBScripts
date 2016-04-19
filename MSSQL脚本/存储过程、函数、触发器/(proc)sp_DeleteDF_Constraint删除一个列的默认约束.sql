@@ -1,4 +1,4 @@
---É¾³ıÒ»¸öÁĞµÄÄ¬ÈÏÔ¼Êø
+--åˆ é™¤ä¸€ä¸ªåˆ—çš„é»˜è®¤çº¦æŸ
 
 USE PinMeiCoreDB
 EXEC dbo.spCheckSchema @schemaName = 'tool' -- nvarchar(30)
@@ -10,11 +10,11 @@ DROP PROCEDURE [tool].[sp_DeleteDF_Constraint]
 GO
 /*============================================================
 SPName:		sp_DeleteDF_Constraint
-Function:   É¾³ıÒ»¸öÁĞµÄÄ¬ÈÏÔ¼Êø
+Function:   åˆ é™¤ä¸€ä¸ªåˆ—çš„é»˜è®¤çº¦æŸ
 Input:		 
 OutPut:		
 Author:		wh	2013-10-21	 
-ÈÕÆÚ        ĞŞ¸ÄÈË                 ĞŞ¸ÄËµÃ÷ 
+æ—¥æœŸ        ä¿®æ”¹äºº                 ä¿®æ”¹è¯´æ˜ 
 =================================================================
 
 */  

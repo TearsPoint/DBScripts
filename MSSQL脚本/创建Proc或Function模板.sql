@@ -1,7 +1,7 @@
 
---´´½¨º¯Êý
-IF EXISTS (SELECT 1 FROM dbo.sysobjects WHERE ID = object_id(N'[¼Ü¹¹Ãû].[º¯ÊýÃû]') AND xtype IN (N'FN', N'IF', N'TF'))
-DROP FUNCTION [¼Ü¹¹Ãû].[º¯ÊýÃû]
+--åˆ›å»ºå‡½æ•°
+IF EXISTS (SELECT 1 FROM dbo.sysobjects WHERE ID = object_id(N'[æž¶æž„å].[å‡½æ•°å]') AND xtype IN (N'FN', N'IF', N'TF'))
+DROP FUNCTION [æž¶æž„å].[å‡½æ•°å]
 GO
 /*============================================================
 FunctionName:		
@@ -9,11 +9,11 @@ Function:
 Input:		 
 OutPut:		
 Author:		
-ÈÕÆÚ        ÐÞ¸ÄÈË                 ÐÞ¸ÄËµÃ÷ 
+æ—¥æœŸ        ä¿®æ”¹äºº                 ä¿®æ”¹è¯´æ˜Ž 
 =================================================================
 
 */
-CREATE FUNCTION [¼Ü¹¹Ãû].[º¯ÊýÃû] (
+CREATE FUNCTION [æž¶æž„å].[å‡½æ•°å] (
 	@Strs	varchar(8000),
 	@Char	varchar(10)
 )
@@ -25,11 +25,11 @@ BEGIN
 END
 
 
---´´½¨´æ´¢¹ý³Ì
+--åˆ›å»ºå­˜å‚¨è¿‡ç¨‹
 go
-IF EXISTS (SELECT 1 FROM dbo.sysobjects WHERE ID = object_id(N'[¼Ü¹¹Ãû].[´æ´¢¹ý³ÌÃû]') 
+IF EXISTS (SELECT 1 FROM dbo.sysobjects WHERE ID = object_id(N'[æž¶æž„å].[å­˜å‚¨è¿‡ç¨‹å]') 
 	AND OBJECTPROPERTY(ID, N'IsProcedure') = 1)
-DROP PROCEDURE [¼Ü¹¹Ãû].[´æ´¢¹ý³ÌÃû] 
+DROP PROCEDURE [æž¶æž„å].[å­˜å‚¨è¿‡ç¨‹å] 
 GO
 /*============================================================
 SPName:		
@@ -37,11 +37,11 @@ Function:
 Input:		 
 OutPut:		
 Author:		 
-ÈÕÆÚ        ÐÞ¸ÄÈË                 ÐÞ¸ÄËµÃ÷ 
+æ—¥æœŸ        ä¿®æ”¹äºº                 ä¿®æ”¹è¯´æ˜Ž 
 =================================================================
 
 */  
-CREATE PROC [¼Ü¹¹Ãû].[´æ´¢¹ý³ÌÃû] 
+CREATE PROC [æž¶æž„å].[å­˜å‚¨è¿‡ç¨‹å] 
 @in_a int  
 AS
 BEGIN

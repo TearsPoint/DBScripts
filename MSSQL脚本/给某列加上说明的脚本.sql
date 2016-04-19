@@ -1,7 +1,7 @@
 
  
---¸øÊı¾İ¿â±íµÄÄ³ÁĞ¼ÓÉÏËµÃ÷ 
-EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'ËµÃ÷',
-    @level0type = N'SCHEMA', @level0name = N'¼Ü¹¹Ãû', 
-    @level1type = N'TABLE', @level1name = N'±íÃû', 
-    @level2type = N'COLUMN', @level2name = N'ÁĞÃû'
+--ç»™æ•°æ®åº“è¡¨çš„æŸåˆ—åŠ ä¸Šè¯´æ˜ 
+EXEC sys.sp_addextendedproperty @name = N'MS_Description', @value = N'è¯´æ˜',
+    @level0type = N'SCHEMA', @level0name = N'æ¶æ„å', 
+    @level1type = N'TABLE', @level1name = N'è¡¨å', 
+    @level2type = N'COLUMN', @level2name = N'åˆ—å'

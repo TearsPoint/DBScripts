@@ -7,14 +7,14 @@ CREATE TABLE student
 )
 
 INSERT INTO student
-SELECT '001','ÕÅÈı' UNION ALL
-SELECT '002','ÀîËÄ' UNION ALL
-SELECT '003','ÍõÎå' UNION ALL
-SELECT '004','ÖìÁù'
+SELECT '001','å¼ ä¸‰' UNION ALL
+SELECT '002','æå››' UNION ALL
+SELECT '003','ç‹äº”' UNION ALL
+SELECT '004','æœ±å…­'
 
 SELECT * FROM student
 
---·½·¨Ò»
+--æ–¹æ³•ä¸€
 declare @a varchar(100)
 set @a=''
 SELECT @a =@a + u.Name + ',' FROM dbo.student u 
@@ -22,7 +22,7 @@ PRINT @a
 PRINT SUBSTRING(@a,0,LEN(@a))  
 
 
---·½·¨¶ş
+--æ–¹æ³•äºŒ
 declare @output varchar(8000)
 select @output = coalesce(@output + ',' , '') + u.Name from dbo.student u 
 print @output
@@ -75,13 +75,13 @@ GO
 
 IF OBJECT_ID('[tb]') IS NOT NULL DROP TABLE [tb]
 GO
-create table tb(ĞÕÃû nvarchar(10) , ¿Î³Ì nvarchar(10) , ·ÖÊı int)
-insert into tb(ĞÕÃû,¿Î³Ì,·ÖÊı) values('ÕÅÈı' , 'ÓïÎÄ' , 74)
-insert into tb(ĞÕÃû,¿Î³Ì,·ÖÊı) values('ÕÅÈı' , 'ÊıÑ§' , 83)
-insert into tb(ĞÕÃû,¿Î³Ì,·ÖÊı) values('ÕÅÈı' , 'ÎïÀí' , 93)
-insert into tb(ĞÕÃû,¿Î³Ì,·ÖÊı) values('ÀîËÄ' , 'ÓïÎÄ' , 74)
-insert into tb(ĞÕÃû,¿Î³Ì,·ÖÊı) values('ÀîËÄ' , 'ÊıÑ§' , 84)
-insert into tb(ĞÕÃû,¿Î³Ì,·ÖÊı) values('ÀîËÄ' , 'ÎïÀí' , 94)
+create table tb(å§“å nvarchar(10) , è¯¾ç¨‹ nvarchar(10) , åˆ†æ•° int)
+insert into tb(å§“å,è¯¾ç¨‹,åˆ†æ•°) values('å¼ ä¸‰' , 'è¯­æ–‡' , 74)
+insert into tb(å§“å,è¯¾ç¨‹,åˆ†æ•°) values('å¼ ä¸‰' , 'æ•°å­¦' , 83)
+insert into tb(å§“å,è¯¾ç¨‹,åˆ†æ•°) values('å¼ ä¸‰' , 'ç‰©ç†' , 93)
+insert into tb(å§“å,è¯¾ç¨‹,åˆ†æ•°) values('æå››' , 'è¯­æ–‡' , 74)
+insert into tb(å§“å,è¯¾ç¨‹,åˆ†æ•°) values('æå››' , 'æ•°å­¦' , 84)
+insert into tb(å§“å,è¯¾ç¨‹,åˆ†æ•°) values('æå››' , 'ç‰©ç†' , 94)
 go
  
 SELECT * FROM dbo.tb
@@ -108,14 +108,14 @@ end
 GO
 
 
---½¨±í Óë²åÈëÊı¾İ  
+--å»ºè¡¨ ä¸æ’å…¥æ•°æ®  
 create table test
 (  ids int identity(1,1) primary key,  userID int,  userName varchar(20)  )   
  insert test (userID,userName)values(1,'aaa')  
  insert test (userID,userName)values(1,'bbb')  
  insert test (userID,userName)values(1,'ccc')  
  insert test (userID,userName)values(1,'ddd')    
- --½¨º¯Êı  
+ --å»ºå‡½æ•°  
  ALTER function f_test  
  (@userID int,@index int)  
  returns int  
@@ -123,17 +123,17 @@ create table test
  begin    
 	 declare @ids int, @sql NVARCHAR(200),@ind nvarchar(10)  set @ind=cast(@index as nvarchar)    
 	 set @sql='select top 1 @ids=ids from (select top '+@ind+'   ids from test where userID='+cast(@userID as nvarchar)+')a order by ids desc'  
-	 exec sp_executesql @sql,N'@ids int out',@ids out;    --»á±¨´í£ºÖ»ÓĞº¯ÊıºÍÄ³Ğ©À©Õ¹´æ´¢¹ı³Ì²ÅÄÜ´Óº¯ÊıÄÚ²¿Ö´ĞĞ
+	 exec sp_executesql @sql,N'@ids int out',@ids out;    --ä¼šæŠ¥é”™ï¼šåªæœ‰å‡½æ•°å’ŒæŸäº›æ‰©å±•å­˜å‚¨è¿‡ç¨‹æ‰èƒ½ä»å‡½æ•°å†…éƒ¨æ‰§è¡Œ
 	 return @ids  
 end 
  
   go    
  
- --µ÷ÓÃ  
+ --è°ƒç”¨  
  SELECT  dbo.f_test(1,1)    
  
  
- --·â×°µ½´æ´¢¹ı³Ìµ÷ÓÃ  
+ --å°è£…åˆ°å­˜å‚¨è¿‡ç¨‹è°ƒç”¨  
  alter proc sp_test  @userID int,  @index int  as  
  declare @ids int, @sql NVARCHAR(200),@ind nvarchar(10)  set @ind=cast(@index as nvarchar)    
 	 set @sql='select top 1 @ids=ids from (select top '+@ind+'   ids from test where userID='+cast(@userID as nvarchar)+')a order by ids desc'  

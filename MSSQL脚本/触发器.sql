@@ -1,21 +1,21 @@
 
 
 
---´´½¨Ò»¸ö´¥·¢Æ÷
-IF  EXISTS (SELECT * FROM sys.triggers WHERE object_id = OBJECT_ID(N'´¥·¢Æ÷Ãû'))
-DROP TRIGGER ´¥·¢Æ÷Ãû
+--åˆ›å»ºä¸€ä¸ªè§¦å‘å™¨
+IF  EXISTS (SELECT * FROM sys.triggers WHERE object_id = OBJECT_ID(N'è§¦å‘å™¨å'))
+DROP TRIGGER è§¦å‘å™¨å
 GO
 /*============================================================
-´¥·¢Æ÷Ãû:	tr_±íÃû_´¥·¢²Ù×÷_×Ö¶ÎÃû
-¹¦ÄÜ:		
-×÷Õß:		wh  
-ÈÕÆÚ        ÐÞ¸ÄÈË                 ÐÞ¸ÄËµÃ÷ 
+è§¦å‘å™¨å:	tr_è¡¨å_è§¦å‘æ“ä½œ_å­—æ®µå
+åŠŸèƒ½:		
+ä½œè€…:		wh  
+æ—¥æœŸ        ä¿®æ”¹äºº                 ä¿®æ”¹è¯´æ˜Ž 
 =================================================================
 
 =================================================================
---²âÊÔ  
+--æµ‹è¯•  
 */ 
-CREATE  TRIGGER tr_articles_update_insert_×Ö¶ÎÃû ON dbo.Articles
+CREATE  TRIGGER tr_articles_update_insert_å­—æ®µå ON dbo.Articles
 FOR UPDATE,INSERT
 AS
 BEGIN

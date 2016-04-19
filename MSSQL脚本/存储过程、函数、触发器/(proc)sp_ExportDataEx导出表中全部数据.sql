@@ -6,9 +6,9 @@ IF EXISTS ( SELECT  * FROM    sys.objects  WHERE   object_id =  OBJECT_ID('tool.
 go
 /*   ------------------------------
 Name:		 tool.sp_ExportDataEx
-Function:	 µº≥ˆ±Ì÷–»´≤ø ˝æ›
+Function:	 ÂØºÂá∫Ë°®‰∏≠ÂÖ®ÈÉ®Êï∞ÊçÆ
 Parameters:	 
-			 @tablename sysname  --±Ì√˚
+			 @tablename sysname  --Ë°®Âêç
 Creator:	 wh      2012-08-05
 
 AlterList
@@ -16,7 +16,7 @@ AlterList
 */
 
 CREATE PROCEDURE tool.sp_ExportDataEx 
-	@tablename SYSNAME --±Ì√˚
+	@tablename SYSNAME --Ë°®Âêç
 AS 
     DECLARE @column VARCHAR(1000) 
     DECLARE @columndata VARCHAR(1000) 
@@ -28,19 +28,19 @@ AS
     DECLARE @ident INT 
     SET nocount ON 
     SET @objectId = OBJECT_ID(@tablename) 
-    IF @objectId IS NULL -- ≈–∂œ∂‘œÛ «∑Ò¥Ê‘⁄ 
+    IF @objectId IS NULL -- Âà§Êñ≠ÂØπË±°ÊòØÂê¶Â≠òÂú® 
         BEGIN 
             PRINT ' The object not exists ' 
             RETURN 
         END 
     SET @objectname = RTRIM(OBJECT_NAME(@objectId)) 
     IF @objectname IS NULL
-        OR CHARINDEX(@objectname, @tablename) = 0 -- ¥À≈–∂œ≤ª—œ√‹ 
+        OR CHARINDEX(@objectname, @tablename) = 0 -- Ê≠§Âà§Êñ≠‰∏ç‰∏•ÂØÜ 
         BEGIN 
             PRINT ' object not in current database ' 
             RETURN 
         END 
-    IF OBJECTPROPERTY(@objectId, ' IsTable ') < > 1 -- ≈–∂œ∂‘œÛ «∑Ò «table 
+    IF OBJECTPROPERTY(@objectId, ' IsTable ') < > 1 -- Âà§Êñ≠ÂØπË±°ÊòØÂê¶ÊòØtable 
         BEGIN 
             PRINT ' The object is not table ' 
             RETURN 
@@ -66,7 +66,7 @@ AS
         BEGIN 
             IF @@fetch_status < > -2 
                 BEGIN 
-                    IF @xtype NOT IN ( 189, 34, 35, 99, 98 ) -- timestamp≤ª–Ë¥¶¿Ì£¨image,text,ntext,sql_variant ‘› ±≤ª¥¶¿Ì 
+                    IF @xtype NOT IN ( 189, 34, 35, 99, 98 ) -- timestamp‰∏çÈúÄÂ§ÑÁêÜÔºåimage,text,ntext,sql_variant ÊöÇÊó∂‰∏çÂ§ÑÁêÜ 
                         BEGIN 
                             SET @column = @column
                                 + CASE WHEN LEN(@column) = 0 THEN ''

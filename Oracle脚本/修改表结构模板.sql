@@ -1,11 +1,11 @@
---ÐÞ¸Ä±íÃû
-ALTER TABLE ¼Ü¹¹Ãû.±íÃû RENAME  TO ÐÂ±íÃû;
+--ä¿®æ”¹è¡¨å
+ALTER TABLE æž¶æž„å.è¡¨å RENAME  TO æ–°è¡¨å;
 
---ÐÞ¸Ä±íÖÐµÄÁÐ
-ALTER TABLE ±íÃû MODIFY  ÁÐÃû  Êý¾ÝÀàÐÍ;
+--ä¿®æ”¹è¡¨ä¸­çš„åˆ—
+ALTER TABLE è¡¨å MODIFY  åˆ—å  æ•°æ®ç±»åž‹;
 
---ÒÑ´æÔÚµÄ±íÖÐµÄÁÐÐÞ¸ÄÁÐÃû
-ALTER TABLE  ¼Ü¹¹Ãû.±íÃû  rename COLUMN ÁÐÃû TO ÐÂÁÐÃû;
+--å·²å­˜åœ¨çš„è¡¨ä¸­çš„åˆ—ä¿®æ”¹åˆ—å
+ALTER TABLE  æž¶æž„å.è¡¨å  rename COLUMN åˆ—å TO æ–°åˆ—å;
 
---ÒÑ´æÔÚµÄ±íÐÂÔöÁÐ
-ALTER TABLE  ¼Ü¹¹Ãû.±íÃû  ADD  ÁÐÃû  Êý¾ÝÀàÐÍ   DEFAULT(Ä¬ÈÏÖµ) NOT NULL;
+--å·²å­˜åœ¨çš„è¡¨æ–°å¢žåˆ—
+ALTER TABLE  æž¶æž„å.è¡¨å  ADD  åˆ—å  æ•°æ®ç±»åž‹   DEFAULT(é»˜è®¤å€¼) NOT NULL;

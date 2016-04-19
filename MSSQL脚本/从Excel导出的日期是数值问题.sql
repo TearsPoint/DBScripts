@@ -1,6 +1,6 @@
 
 /*
-´ÓExcelµ¼³öµÄÈÕÆÚÊÇÊýÖµÎÊÌâ
+ä»ŽExcelå¯¼å‡ºçš„æ—¥æœŸæ˜¯æ•°å€¼é—®é¢˜
 */
 
 DECLARE @out_dDate DATETIME

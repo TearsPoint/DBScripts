@@ -1,5 +1,5 @@
 
---给一系列数字自动补零 组成固定位数的sql
+--缁欎竴绯诲垪鏁板瓧鑷姩琛ラ浂 缁勬垚鍥哄畾浣嶆暟鐨剆ql
 
 declare @count int
 set @count = 0

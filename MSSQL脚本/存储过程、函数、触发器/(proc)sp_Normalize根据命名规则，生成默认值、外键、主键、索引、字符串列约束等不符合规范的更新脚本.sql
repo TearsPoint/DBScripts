@@ -10,13 +10,13 @@ if object_id('[tool].[sp_Normalize]') is not null
 GO
 /*============================================================
 SPName:    [tool].[sp_Normalize]
-Function:  ¸ù¾İÃüÃû¹æÔò£¬Éú³ÉÄ¬ÈÏÖµ¡¢Íâ¼ü¡¢Ö÷¼ü¡¢Ë÷Òı¡¢×Ö·û´®ÁĞÔ¼ÊøµÈ²»·ûºÏ¹æ·¶µÄ¸üĞÂ½Å±¾
-			ÊÊÓÃÓÚSQL 2008
+Function:  æ ¹æ®å‘½åè§„åˆ™ï¼Œç”Ÿæˆé»˜è®¤å€¼ã€å¤–é”®ã€ä¸»é”®ã€ç´¢å¼•ã€å­—ç¬¦ä¸²åˆ—çº¦æŸç­‰ä¸ç¬¦åˆè§„èŒƒçš„æ›´æ–°è„šæœ¬
+			é€‚ç”¨äºSQL 2008
 InPut:      
 OutPut:    
 Author:     WW	2013/04/15
-ĞŞ¸Ä¼ÇÂ¼£º
-  ÈÕÆÚ       ĞŞ¸ÄÈË                ĞŞ¸ÄËµÃ÷
+ä¿®æ”¹è®°å½•ï¼š
+  æ—¥æœŸ       ä¿®æ”¹äºº                ä¿®æ”¹è¯´æ˜
   
 exec [tool].[sp_Normalize]
 -------------------------------------------------------------
@@ -51,7 +51,7 @@ IF(@table='')
 	SELECT [object_id],ss.NAME,ss.NAME+'.'+so.NAME
 	FROM sys.objects so,sys.schemas ss
 	WHERE so.schema_id = ss.schema_id AND type = 'U'
-	AND so.NAME NOT LIKE '%É¾³ı%' AND so.NAME NOT LIKE '%±¸·İ%' AND CHARINDEX('_',so.NAME)<=0 AND CHARINDEX('(',so.NAME)<=0
+	AND so.NAME NOT LIKE '%åˆ é™¤%' AND so.NAME NOT LIKE '%å¤‡ä»½%' AND CHARINDEX('_',so.NAME)<=0 AND CHARINDEX('(',so.NAME)<=0
 ELSE IF(charindex('%',@table)>-1)
 	INSERT #tObjectIds
 	EXECUTE ('SELECT [object_id], ss.name,ss.name+''.''+so.name
@@ -74,12 +74,12 @@ FROM sys.indexes si, #tObjectIds oi
 WHERE [object_id] = oi.ID
 ORDER BY object_name([object_id])
 
---Éú³ÉÖ÷¼üÃû³Æ
+--ç”Ÿæˆä¸»é”®åç§°
 UPDATE #tTmp
 SET newname = prefix + '_' + object_name(objid)
 WHERE isprimarykey = 1
 
---Éú³ÉË÷ÒıÃû³Æ
+--ç”Ÿæˆç´¢å¼•åç§°
 DECLARE @id int
 DECLARE @objid int
 DECLARE @indid int
@@ -114,33 +114,33 @@ NextHandle:
 END
 ExitHandle:
 
-PRINT '--³¬³¤±íÃû³Æ'
+PRINT '--è¶…é•¿è¡¨åç§°'
 SELECT '--' + fullname + ','+str(len(object_name([id])))
 FROM #tObjectIds 
 WHERE len(object_name([id]))>30
 ORDER BY fullname
 
-PRINT '--³¬³¤×Ö¶ÎÃû³Æ'
+PRINT '--è¶…é•¿å­—æ®µåç§°'
 SELECT '--' + oi.fullname + ':' + sc.NAME + ',' + str(len(sc.NAME))
 FROM #tObjectIds oi, sys.syscolumns sc
 WHERE oi.[id]=sc.[id] AND len(sc.NAME)>30
 ORDER BY oi.fullname, sc.NAME
 
 
-PRINT '--ÖØÃüÃûÖ÷¼ü'
+PRINT '--é‡å‘½åä¸»é”®'
 SELECT 'EXEC sp_rename N''' + objname + ''', N''' + newname + ''', N''INDEX'';'
 FROM #tTmp
 WHERE oldname != newname AND isprimarykey=1
 ORDER BY object_name(objid), newname
 
-PRINT '--ÖØÃüÃûË÷Òı'
+PRINT '--é‡å‘½åç´¢å¼•'
 SELECT 'EXEC sp_rename N''' + objname + ''', N''' + newname + ''', N''INDEX'';'
 FROM #tTmp
 WHERE oldname != newname AND isprimarykey=0
 ORDER BY object_name(objid), newname
 
 
-PRINT '-- ÖØÃüÃûÍâ¼üfk+±íÃûÊ××Ö·û+checksum(±íÃû_ÁĞÃû)'
+PRINT '-- é‡å‘½åå¤–é”®fk+è¡¨åé¦–å­—ç¬¦+checksum(è¡¨å_åˆ—å)'
 SELECT 'EXEC sp_rename N''' + oi.schemaname + '.' + so.NAME + ''', N''' + 'fk' + [dbo].[fnAcronyms](object_name(so.parent_obj)) + REPLACE(LTRIM(str(checksum(object_name(so.parent_obj)+'_'+sc.NAME),16)),'-','') + ''';'
 --select so.name,sc.name,sr.*
 FROM sys.sysobjects so, sys.syscolumns sc, sys.sysreferences sr, #tObjectIds oi
@@ -149,7 +149,7 @@ AND sr.constid = so.ID AND so.xtype='F'
 AND so.NAME != 'fk' + [dbo].[fnAcronyms](object_name(so.parent_obj)) + REPLACE(LTRIM(str(checksum(object_name(so.parent_obj)+'_'+sc.NAME),16)),'-','')
 AND so.parent_obj = oi.ID
 
-PRINT '-- ÖØÃüÃûÄ¬ÈÏÖµDF_±íÃû_ÁĞÃû'
+PRINT '-- é‡å‘½åé»˜è®¤å€¼DF_è¡¨å_åˆ—å'
 SELECT 'EXEC sp_rename N''' + SCHEMA_NAME(so.uid) + '.' + so.NAME + ''', N''' + 'DF_' + object_name(so.parent_obj) + '_' + sc.NAME + ''';'
 FROM sys.sysobjects so, sys.syscolumns sc, sys.sysconstraints st, #tObjectIds oi
 WHERE so.parent_obj = sc.ID AND so.parent_obj = st.ID AND sc.colid = st.colid
@@ -158,14 +158,14 @@ AND so.NAME != 'DF_' + object_name(so.parent_obj) + '_' + sc.NAME
 AND so.parent_obj = oi.ID
 
 
-PRINT '-- ÉèÖÃ×Ö·ûÁĞÔÊĞíÎª¿Õ'
+PRINT '-- è®¾ç½®å­—ç¬¦åˆ—å…è®¸ä¸ºç©º'
 SELECT 'ALTER TABLE [' + ss.NAME + '].[' + so.NAME + '] ALTER COLUMN [' + sc.NAME + '] ' + st.NAME + '(' + 
 LTRIM(str(CASE sc.user_type_id WHEN 231 THEN sc.max_length/2 WHEN 239 THEN sc.max_length/2 ELSE sc.max_length END)) + ') NULL'
 -- select ss.name, so.name, sc.*, st.*,si.*
 FROM sys.objects so,sys.schemas ss,sys.systypes st, sys.columns sc LEFT JOIN sys.sysindexkeys si
 ON sc.object_id=si.ID AND sc.column_id=si.colid
 WHERE so.schema_id = ss.schema_id AND so.type = 'U' AND sc.object_id=so.object_id
-AND so.NAME NOT LIKE '%É¾³ı%' AND so.NAME NOT LIKE '%±¸·İ%' AND CHARINDEX('_',so.NAME)<=0 AND CHARINDEX('(',so.NAME)<=0
+AND so.NAME NOT LIKE '%åˆ é™¤%' AND so.NAME NOT LIKE '%å¤‡ä»½%' AND CHARINDEX('_',so.NAME)<=0 AND CHARINDEX('(',so.NAME)<=0
 AND sc.is_nullable=0 AND sc.max_length>0
 AND st.xusertype=sc.user_type_id AND sc.user_type_id IN(167,175,231,239)
 AND COALESCE(si.colid,0)=0

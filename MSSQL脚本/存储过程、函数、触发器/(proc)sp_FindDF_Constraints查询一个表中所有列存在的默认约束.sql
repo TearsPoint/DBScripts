@@ -8,11 +8,11 @@ DROP PROC tool.sp_FindDF_Constraints
 GO
 /*============================================================
 SPName:  tool.sp_FindDF_Constraints		
-Function:    ²éÑ¯Ò»¸ö±íÖĞËùÓĞÁĞ´æÔÚµÄÄ¬ÈÏÔ¼Êø
+Function:    æŸ¥è¯¢ä¸€ä¸ªè¡¨ä¸­æ‰€æœ‰åˆ—å­˜åœ¨çš„é»˜è®¤çº¦æŸ
 Input:		 
 OutPut:		
 Author:		wh		2013-10-21
-ÈÕÆÚ        ĞŞ¸ÄÈË                 ĞŞ¸ÄËµÃ÷ 
+æ—¥æœŸ        ä¿®æ”¹äºº                 ä¿®æ”¹è¯´æ˜ 
 =================================================================
 
 */
@@ -20,7 +20,7 @@ CREATE PROC tool.sp_FindDF_Constraints
 	@tableName	nvarchar(60) 
 AS
 BEGIN 
- 	SELECT c.NAME ÁĞÃû, A.NAME Ô¼ÊøÃû,b.* FROM sysconstraints B
+ 	SELECT c.NAME åˆ—å, A.NAME çº¦æŸå,b.* FROM sysconstraints B
 	JOIN sysobjects A ON a.id=b.constid
 	JOIN sys.columns C ON  c.object_id=b.id AND c.column_id = B.colid
 	WHERE B.id=OBJECT_ID(@tableName) 

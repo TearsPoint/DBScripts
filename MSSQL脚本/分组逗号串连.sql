@@ -18,7 +18,7 @@ insert into t1 values (3,'c')
 insert into t1 values (3,'c')
 
 
---·½°¸Ò»
+--æ–¹æ¡ˆä¸€
 select mid, items=
 	stuff(
 		(
@@ -31,7 +31,7 @@ from (select distinct mid,uid from t1) s
 group by mid
 
 
---·½°¸¶þ
+--æ–¹æ¡ˆäºŒ
 select mid, items=(
 			select ISNULL( uid +',' ,'') from
 			(select distinct mid,uid from t1) t
@@ -42,7 +42,7 @@ group by mid
 
 
 
---·½°¸Èý
+--æ–¹æ¡ˆä¸‰
 select mid, items=(
 			select ISNULL( CASE ROW_NUMBER() OVER(ORDER BY t.mid) WHEN 1 THEN '' ELSE ',' END +uid ,'') from
 			(select distinct mid,uid from t1) t
@@ -67,7 +67,7 @@ group by mid
 
 
 
---²âÊÔ
+--æµ‹è¯•
 SELECT * FROM t1 FOR XML PATH('')
 
 

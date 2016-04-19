@@ -2,16 +2,16 @@
 USE CoreDB
 go
 CREATE SCHEMA dic 
-go
---”√ªßª˘±æ–≈œ¢±Ì		 
+go 
+--Áî®Êà∑Âü∫Êú¨‰ø°ÊÅØË°®		  
 
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE ID = object_id(N'[dic].[BloodType]') AND OBJECTPROPERTY(ID, N'IsUserTable') = 1)
 	DROP TABLE dic.BloodType
 GO
 CREATE TABLE dic.BloodType
 (
-	ID int IDENTITY(1,1),			--”√ªßID
-	DisplayName nvarchar(100) null,	--Í«≥∆	  
+	ID int IDENTITY(1,1),			--Áî®Êà∑ID
+	DisplayName nvarchar(100) null,	--ÊòµÁß∞	  
 	WBCode nvarchar (10) COLLATE Chinese_PRC_CI_AS NOT NULL,
 	SpellCode nvarchar (10) COLLATE Chinese_PRC_CI_AS NOT NULL
 )
@@ -20,11 +20,11 @@ ALTER TABLE dic.BloodType ADD CONSTRAINT [PK_BLOODTYPEID] PRIMARY KEY CLUSTERED 
 GO
 
 INSERT INTO dic.BloodType ( DisplayName, WBCode, SpellCode )
-VALUES  ( 'A–Õ', 'AGAJ',  ''  )
+VALUES  ( 'AÂûã', 'AGAJ',  ''  )
 INSERT INTO dic.BloodType ( DisplayName, WBCode, SpellCode )
-VALUES  ( 'AB–Õ', 'ABGA',  ''  )
+VALUES  ( 'ABÂûã', 'ABGA',  ''  )
 INSERT INTO dic.BloodType ( DisplayName, WBCode, SpellCode )
-VALUES  ( 'O–Õ', 'OGAJ',  ''  )
+VALUES  ( 'OÂûã', 'OGAJ',  ''  )
 GO
 SELECT * FROM dic.BloodType
 										   

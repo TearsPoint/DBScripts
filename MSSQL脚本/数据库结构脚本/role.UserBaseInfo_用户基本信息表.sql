@@ -3,16 +3,16 @@ USE CoreDB
 go
 CREATE SCHEMA role 
 go
---”√ªßª˘±æ–≈œ¢±Ì					   
+--Áî®Êà∑Âü∫Êú¨‰ø°ÊÅØË°®					   
 
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE ID = object_id(N'[role].[UserBaseInfo]') AND OBJECTPROPERTY(ID, N'IsUserTable') = 1)
 	DROP TABLE role.UserBaseInfo
 GO
 CREATE TABLE role.UserBaseInfo
 (
-	UserId int PRIMARY KEY IDENTITY(1,1),			--”√ªßID
-	DisplayName nvarchar(100) null,	--Í«≥∆
-	VerityName nvarchar(10) NULL,	--’Ê µ–’√˚
+	UserId int PRIMARY KEY IDENTITY(1,1),			--Áî®Êà∑ID
+	DisplayName nvarchar(100) null,	--ÊòµÁß∞
+	VerityName nvarchar(10) NULL,	--ÁúüÂÆûÂßìÂêç
 	BirthDay DATETIME NULL,
 	Age INT NOT NULL CONSTRAINT DF_UAGE DEFAULT(0),
 	BloodTypeCodeId int NOT NULL CONSTRAINT DF_UBLOODTYPECODEID	DEFAULT(0)

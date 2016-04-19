@@ -11,14 +11,14 @@ grant execute on utils to repc;
   CREATE OR REPLACE PUBLIC SYNONYM "UTILS" FOR "EMULATION"."UTILS";
   
   
---´´½¨×ÔÔöĞòÁĞ
+--åˆ›å»ºè‡ªå¢åºåˆ—
 CREATE SEQUENCE repc.NursingAcademicEffectId_SEQ
    START WITH 1 
    INCREMENT BY 1;
 commit;
 
 --drop table repc.NursingAcademicEffect
---´´½¨±í
+--åˆ›å»ºè¡¨
 CREATE TABLE REPC.NursingAcademicEffect
 (
   NursingAcademicEffectId NUMBER(10,0)  NOT NULL,
@@ -30,27 +30,27 @@ CREATE TABLE REPC.NursingAcademicEffect
   IsDeleted NUMBER(1,0) DEFAULT (0) NOT NULL,
   ROWVERSION DATE DEFAULT (SYSDATE) NOT NULL 
 );
---ÉèÖÃ±íÖ÷¼ü
+--è®¾ç½®è¡¨ä¸»é”®
 ALTER TABLE repc.NursingAcademicEffect 
    ADD 
 CONSTRAINT cpk_NursingAcademicEffect PRIMARY KEY( NursingAcademicEffectId );
  
---ÉèÖÃÁĞËµÃ÷
+--è®¾ç½®åˆ—è¯´æ˜
 COMMENT ON COLUMN repc.NursingAcademicEffect.NursingAcademicEffectId
-IS 'ÕşÖÎ³É·Ö';
+IS 'æ”¿æ²»æˆåˆ†';
 COMMENT ON COLUMN repc.NursingAcademicEffect.OwnerOrganizationId
-IS 'ËùÊô¿ÆÊÒID'; 
+IS 'æ‰€å±ç§‘å®¤ID'; 
 COMMENT ON COLUMN repc.NursingAcademicEffect.AwardDatetime
-IS '»ñ½±Ê±¼ä';  
+IS 'è·å¥–æ—¶é—´';  
 COMMENT ON COLUMN repc.NursingAcademicEffect.NurseID
-IS '»¤Ê¿ID';  
+IS 'æŠ¤å£«ID';  
 COMMENT ON COLUMN repc.NursingAcademicEffect.SocietyPost
-IS 'Ñ§»áÈÎÖ°';  
+IS 'å­¦ä¼šä»»èŒ';  
 COMMENT ON COLUMN repc.NursingAcademicEffect.AwardContent
-IS '»ñ½±ÄÚÈİ';   
+IS 'è·å¥–å†…å®¹';   
 commit;
 
---´´½¨×ÔÔöÁĞµÄ´¥·¢Æ÷
+--åˆ›å»ºè‡ªå¢åˆ—çš„è§¦å‘å™¨
 CREATE OR REPLACE TRIGGER repc.NursingAcademicEffectId_TRG BEFORE
   INSERT ON repc.NursingAcademicEffect FOR EACH ROW DECLARE v_newVal NUMBER(12) := 0;
   v_incval NUMBER(12) := 0;

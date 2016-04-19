@@ -9,7 +9,7 @@ if object_id('tool.sp_TB') is not null
 go
 /*   ------------------------------
 Name:		 dbo.sp_tb
-Function:	 ²éÑ¯±íÏêÏ¸ĞÅÏ¢
+Function:	 æŸ¥è¯¢è¡¨è¯¦ç»†ä¿¡æ¯
 Parameters:	  
 Creator:	 wh      2013-10-21
 
@@ -20,28 +20,28 @@ CREATE procedure [tool].[sp_TB] (@tb varchar(100))
 as        
 set @tb=ltrim(rtrim(@tb))        
 SELECT        
- --¼Ü¹¹=case when a.colorder=1 then ss.name else '----' end,        
- ±íÃû=case when a.colorder=1 then ss.name+'.'+rtrim(d.name) else '----' end,        
- ËµÃ÷=case when a.colorder=1 then isnull(f.value,'') else '----' end,        
- --¼Ü¹¹= ss.name  ,        
- --±íÃû= d.name  ,        
- --ËµÃ÷=isnull(f.value,''),        
- Ğò=a.colorder,        
- ×Ö¶ÎÃû=a.name,        
- ident=case when COLUMNPROPERTY( a.id,a.name,'IsIdentity')=1 then '¡Ì'else '' end,        
- Ö÷¼ü=case when exists(SELECT 1 FROM sysobjects where xtype='PK' and name in (        
+ --æ¶æ„=case when a.colorder=1 then ss.name else '----' end,        
+ è¡¨å=case when a.colorder=1 then ss.name+'.'+rtrim(d.name) else '----' end,        
+ è¯´æ˜=case when a.colorder=1 then isnull(f.value,'') else '----' end,        
+ --æ¶æ„= ss.name  ,        
+ --è¡¨å= d.name  ,        
+ --è¯´æ˜=isnull(f.value,''),        
+ åº=a.colorder,        
+ å­—æ®µå=a.name,        
+ ident=case when COLUMNPROPERTY( a.id,a.name,'IsIdentity')=1 then 'âˆš'else '' end,        
+ ä¸»é”®=case when exists(SELECT 1 FROM sysobjects where xtype='PK' and name in (        
  SELECT name FROM sysindexes WHERE indid in(        
  SELECT indid FROM sysindexkeys WHERE id = a.id AND colid=a.colid        
- ))) then '¡Ì' else '' end,        
- ÀàĞÍ=b.name,        
- --Õ¼ÓÃ×Ö½ÚÊı=a.length,        
- ³¤¶È=COLUMNPROPERTY(a.id,a.name,'PRECISION'),        
- Ğ¡ÊıÎ»Êı=isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0),        
- [NULL]=case when a.isnullable=1 then '¡Ì'else '' end,        
- Ä¬ÈÏÖµ=isnull(e.text,''),        
- ×Ö¶ÎËµÃ÷=isnull(g.[value],''),    
- ´´½¨=case when a.colorder=1 then (case when d.crdate='1900-1-1' then '' else convert(varchar(111),d.crdate,111) end) else '' end,        
- ×îºóĞŞ¸Ä=case when a.colorder=1 then (case when d.crdate='1900-1-1' then '' else convert(varchar(111),d.refdate,111) end) else '' end    
+ ))) then 'âˆš' else '' end,        
+ ç±»å‹=b.name,        
+ --å ç”¨å­—èŠ‚æ•°=a.length,        
+ é•¿åº¦=COLUMNPROPERTY(a.id,a.name,'PRECISION'),        
+ å°æ•°ä½æ•°=isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0),        
+ [NULL]=case when a.isnullable=1 then 'âˆš'else '' end,        
+ é»˜è®¤å€¼=isnull(e.text,''),        
+ å­—æ®µè¯´æ˜=isnull(g.[value],''),    
+ åˆ›å»º=case when a.colorder=1 then (case when d.crdate='1900-1-1' then '' else convert(varchar(111),d.crdate,111) end) else '' end,        
+ æœ€åä¿®æ”¹=case when a.colorder=1 then (case when d.crdate='1900-1-1' then '' else convert(varchar(111),d.refdate,111) end) else '' end    
 FROM syscolumns a        
 left join systypes b on a.xusertype=b.xusertype        
 inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name<>'dtproperties'        

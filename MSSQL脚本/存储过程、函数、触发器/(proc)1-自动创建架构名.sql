@@ -9,11 +9,11 @@ DROP PROCEDURE spCheckSchema
 GO
 /*============================================================
 SPName:		spCheckSchema	
-Function:   ¼ì²é¼Ü¹¹Ãû£¬Èç¹û²»´æÔÚÔò×Ô¶¯´´½¨
+Function:   æ£€æŸ¥æž¶æž„åï¼Œå¦‚æžœä¸å­˜åœ¨åˆ™è‡ªåŠ¨åˆ›å»º
 Input:		 
 OutPut:		
 Author:		 
-ÈÕÆÚ        ÐÞ¸ÄÈË                 ÐÞ¸ÄËµÃ÷ 
+æ—¥æœŸ        ä¿®æ”¹äºº                 ä¿®æ”¹è¯´æ˜Ž 
 =================================================================
 2013-1-4	wh			create
 */  
@@ -40,11 +40,11 @@ DROP PROCEDURE spAlterTableSchema
 GO
 /*============================================================
 SPName:		spAlterTableSchema	
-Function:   ÐÞ¸Ä¶ÔÏó£¨±í¡¢´æ´¢¹ý³Ì£©µÄ¼Ü¹¹Ãû
+Function:   ä¿®æ”¹å¯¹è±¡ï¼ˆè¡¨ã€å­˜å‚¨è¿‡ç¨‹ï¼‰çš„æž¶æž„å
 Input:		 
 OutPut:		
 Author:		 
-ÈÕÆÚ        ÐÞ¸ÄÈË                 ÐÞ¸ÄËµÃ÷ 
+æ—¥æœŸ        ä¿®æ”¹äºº                 ä¿®æ”¹è¯´æ˜Ž 
 =================================================================
 2013-1-4	wh			create
 */  
@@ -60,7 +60,7 @@ BEGIN
 	END 
 	IF @objetName IS NULL OR LEN(@objetName)=0
 	BEGIN
-		RAISERROR('´íÎó:±íÃû²»ÄÜÎª¿Õ',10,1,'')
+		RAISERROR('é”™è¯¯:è¡¨åä¸èƒ½ä¸ºç©º',10,1,'')
 		RETURN
 	END
 	

@@ -1,6 +1,6 @@
 
---╥╤┤ц╘┌╡─▒э╨┬╘Ў╫╓╢╬
+--х╖▓хнШхЬичЪДшбицЦ░хвЮхнЧцо╡
 
-IF NOT EXISTS( SELECT *  FROM syscolumns WHERE [id] =object_id(N'▒э├√') AND [name] = '╫╓╢╬├√') 
-	ALTER TABLE ▒э├√ ADD [╫╓╢╬├√] [╫╓╢╬└р╨═]   NULL 
+IF NOT EXISTS( SELECT *  FROM syscolumns WHERE [id] =object_id(N'шбихРН') AND [name] = 'хнЧцо╡хРН') 
+	ALTER TABLE шбихРН ADD [хнЧцо╡хРН] [хнЧцо╡ч▒╗хЮЛ]   NULL 
 GO

@@ -8,10 +8,10 @@ if object_id('sp_restoreDB') is not null
 go
 /*   ------------------------------
 Name:		 dbo.sp_restoreDB
-Function:	 »Ö¸´Êı¾İ¿â
+Function:	 æ¢å¤æ•°æ®åº“
 Parameters:	 
-			 @DBName sysname,--Êı¾İ¿âÃû
-			 @toFilePath nvarchar(1000)--Â·¾¶Èç£ºc:\
+			 @DBName sysname,--æ•°æ®åº“å
+			 @toFilePath nvarchar(1000)--è·¯å¾„å¦‚ï¼šc:\
 			 
 Creator:	 wh      2013-03-14
 
@@ -20,8 +20,8 @@ AlterList
 
 */
 create proc sp_restoreDB(
- @DBName sysname,--Êı¾İ¿âÃû
- @fromFilePath nvarchar(1000) ,--Â·¾¶Èç£ºc:\
+ @DBName sysname,--æ•°æ®åº“å
+ @fromFilePath nvarchar(1000) ,--è·¯å¾„å¦‚ï¼šc:\
  @toFilePath NVARCHAR(1000)
 )
 as
